@@ -41,3 +41,13 @@ func TestIsNotBuzz(t *testing.T) {
 		t.Errorf("IsBuzz(%v) == %t, want %t", in, result, want)
 	}
 }
+
+func TestIsFizzBuzz(t *testing.T) {
+	in := 15
+	want := true
+	result := IsFizzBuzz(in)
+
+	if result != want {
+		t.Errorf("IsFizzBuzz(%v) == %t, want %t", in, result, want)
+	}
+}
