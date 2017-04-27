@@ -8,7 +8,7 @@ func TestIsFizz(t *testing.T) {
 	result := IsFizz(in)
 
 	if result != want {
-		t.Errorf("IsFizz(%v) == %t, want %t", in, result, want)
+		t.Errorf("IsFizz(%d) == %t, want %t", in, result, want)
 	}
 }
 
@@ -18,7 +18,7 @@ func TestIsNotFizz(t *testing.T) {
 	result := IsFizz(in)
 
 	if result != want {
-		t.Errorf("IsFizz(%v) == %t, want %t", in, result, want)
+		t.Errorf("IsFizz(%d) == %t, want %t", in, result, want)
 	}
 }
 
@@ -28,7 +28,7 @@ func TestIsBuzz(t *testing.T) {
 	result := IsBuzz(in)
 
 	if result != want {
-		t.Errorf("IsBuzz(%v) == %t, want %t", in, result, want)
+		t.Errorf("IsBuzz(%d) == %t, want %t", in, result, want)
 	}
 }
 
@@ -38,7 +38,7 @@ func TestIsNotBuzz(t *testing.T) {
 	result := IsBuzz(in)
 
 	if result != want {
-		t.Errorf("IsBuzz(%v) == %t, want %t", in, result, want)
+		t.Errorf("IsBuzz(%d) == %t, want %t", in, result, want)
 	}
 }
 
@@ -48,6 +48,6 @@ func TestIsFizzBuzz(t *testing.T) {
 	result := IsFizzBuzz(in)
 
 	if result != want {
-		t.Errorf("IsFizzBuzz(%v) == %t, want %t", in, result, want)
+		t.Errorf("IsFizzBuzz(%d) == %t, want %t", in, result, want)
 	}
 }
