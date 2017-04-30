@@ -28,3 +28,12 @@ func Test3IsFizz(t *testing.T) {
 		t.Errorf("Calc(%d) == %q, want %q", in, result, want)
 	}
 }
+
+func Test5IsBuzz(t *testing.T) {
+	want := "Buzz"
+	in := 5
+
+	if result := Calc(in); result != want {
+		t.Errorf("Calc(%d) == %q, want %q", in, result, want)
+	}
+}
