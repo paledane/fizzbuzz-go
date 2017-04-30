@@ -9,7 +9,7 @@ func Test1Is1(t *testing.T) {
 	result := Calc(in)
 
 	if result != want {
-		t.Errorf("Calc(%d) == %v, want %v", in, result, want)
+		t.Errorf("Calc(%d) == %q, want %q", in, result, want)
 	}
 }
 
@@ -20,6 +20,17 @@ func Test13Is13(t *testing.T) {
 	result := Calc(in)
 
 	if result != want {
-		t.Errorf("Calc(%d) == %v, want %v", in, result, want)
+		t.Errorf("Calc(%d) == %q, want %q", in, result, want)
+	}
+}
+
+func Test3IsFizz(t *testing.T) {
+	want := "Fizz"
+	in := 3
+
+	result := Calc(in)
+
+	if result != want {
+		t.Errorf("Calc(%d) == %q, want %q", in, result, want)
 	}
 }
