@@ -9,6 +9,9 @@ import (
 // of five print “Buzz” is returned. For numbers which are multiples
 // of both three and five “FizzBuzz” is returned.
 func Calc(i int) string {
+	if i%15 == 0 {
+		return "FizzBuzz"
+	}
 	if i%3 == 0 {
 		return "Fizz"
 	}

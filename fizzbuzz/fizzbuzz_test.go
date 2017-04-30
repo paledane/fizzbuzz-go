@@ -37,3 +37,12 @@ func Test5IsBuzz(t *testing.T) {
 		t.Errorf("Calc(%d) == %q, want %q", in, result, want)
 	}
 }
+
+func Test15IsFizzBuzz(t *testing.T) {
+	want := "FizzBuzz"
+	in := 15
+
+	if result := Calc(in); result != want {
+		t.Errorf("Calc(%d) == %q, want %q", in, result, want)
+	}
+}
