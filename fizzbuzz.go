@@ -1,4 +1,4 @@
-package fizzbuzz
+package main
 
 // IsFizz returns true if value is divisable by 3
 func IsFizz(value int) bool {
