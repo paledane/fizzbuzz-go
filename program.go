@@ -7,9 +7,10 @@ import (
 )
 
 func main() {
-
+	var fb fizzbuzz.Fizzbuzzer
 	for i := 1; i <= 100; i++ {
-		fmt.Printf("%q\n", fizzbuzz.Calc(i))
+		fb = fizzbuzz.Fizzbuzz(i)
+		fmt.Printf("%q\n", fb.Calc())
 	}
 
 }

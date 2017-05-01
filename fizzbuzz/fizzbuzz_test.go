@@ -3,46 +3,46 @@ package fizzbuzz
 import "testing"
 
 func Test1Is1(t *testing.T) {
+	var in Fizzbuzzer = Fizzbuzz(1)
 	want := "1"
-	in := 1
 
-	if result := Calc(in); result != want {
+	if result := in.Calc(); result != want {
 		t.Errorf("Calc(%d) == %q, want %q", in, result, want)
 	}
 }
 
 func Test13Is13(t *testing.T) {
+	var in Fizzbuzzer = Fizzbuzz(13)
 	want := "13"
-	in := 13
 
-	if result := Calc(in); result != want {
+	if result := in.Calc(); result != want {
 		t.Errorf("Calc(%d) == %q, want %q", in, result, want)
 	}
 }
 
 func Test3IsFizz(t *testing.T) {
+	var in Fizzbuzzer = Fizzbuzz(3)
 	want := "Fizz"
-	in := 3
 
-	if result := Calc(in); result != want {
+	if result := in.Calc(); result != want {
 		t.Errorf("Calc(%d) == %q, want %q", in, result, want)
 	}
 }
 
 func Test5IsBuzz(t *testing.T) {
+	var in Fizzbuzzer = Fizzbuzz(5)
 	want := "Buzz"
-	in := 5
 
-	if result := Calc(in); result != want {
+	if result := in.Calc(); result != want {
 		t.Errorf("Calc(%d) == %q, want %q", in, result, want)
 	}
 }
 
 func Test15IsFizzBuzz(t *testing.T) {
+	var in Fizzbuzzer = Fizzbuzz(15)
 	want := "FizzBuzz"
-	in := 15
 
-	if result := Calc(in); result != want {
+	if result := in.Calc(); result != want {
 		t.Errorf("Calc(%d) == %q, want %q", in, result, want)
 	}
 }
