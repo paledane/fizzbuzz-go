@@ -2,47 +2,42 @@ package fizzbuzz
 
 import "testing"
 
-func Test1Is1(t *testing.T) {
-	var in Fizzbuzzer = Fizzbuzz(1)
+func TestDefaultHandler(t *testing.T) {
+	in := 1
+	handler := DefaultHandler{}
 	want := "1"
 
-	if result := in.Calc(); result != want {
+	if result := handler.Calc(in); result != want {
 		t.Errorf("Calc(%d) == %q, want %q", in, result, want)
 	}
 }
 
-func Test13Is13(t *testing.T) {
-	var in Fizzbuzzer = Fizzbuzz(13)
-	want := "13"
-
-	if result := in.Calc(); result != want {
-		t.Errorf("Calc(%d) == %q, want %q", in, result, want)
-	}
-}
-
-func Test3IsFizz(t *testing.T) {
-	var in Fizzbuzzer = Fizzbuzz(3)
+func TestFizzHandler(t *testing.T) {
+	in := 3
+	handler := FizzHandler{}
 	want := "Fizz"
 
-	if result := in.Calc(); result != want {
+	if result := handler.Calc(in); result != want {
 		t.Errorf("Calc(%d) == %q, want %q", in, result, want)
 	}
 }
 
-func Test5IsBuzz(t *testing.T) {
-	var in Fizzbuzzer = Fizzbuzz(5)
+func TestBuzzHandler(t *testing.T) {
+	in := 5
+	handler := BuzzHandler{}
 	want := "Buzz"
 
-	if result := in.Calc(); result != want {
+	if result := handler.Calc(in); result != want {
 		t.Errorf("Calc(%d) == %q, want %q", in, result, want)
 	}
 }
 
-func Test15IsFizzBuzz(t *testing.T) {
-	var in Fizzbuzzer = Fizzbuzz(15)
+func TestFizzBuzzHandler(t *testing.T) {
+	in := 15
+	handler := FizzBuzzHandler{}
 	want := "FizzBuzz"
 
-	if result := in.Calc(); result != want {
+	if result := handler.Calc(in); result != want {
 		t.Errorf("Calc(%d) == %q, want %q", in, result, want)
 	}
 }

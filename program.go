@@ -7,10 +7,17 @@ import (
 )
 
 func main() {
-	var fb fizzbuzz.Fizzbuzzer
+
+	chain := &fizzbuzz.FizzBuzzHandler{
+		Next: &fizzbuzz.FizzHandler{
+			Next: &fizzbuzz.BuzzHandler{
+				Next: &fizzbuzz.DefaultHandler{},
+			},
+		},
+	}
+
 	for i := 1; i <= 100; i++ {
-		fb = fizzbuzz.Fizzbuzz(i)
-		fmt.Printf("%q\n", fb.Calc())
+		fmt.Printf("%q\n", chain.Calc(i))
 	}
 
 }

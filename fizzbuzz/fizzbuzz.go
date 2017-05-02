@@ -1,29 +1,49 @@
 package fizzbuzz
 
 import (
-	"fmt"
+	"strconv"
 )
 
-type Fizzbuzzer interface {
-	Calc() string
+type Handler interface {
+	Calc(i int) string
 }
 
-type Fizzbuzz int32
+type FizzHandler struct {
+	Next Handler
+}
 
-// Calc returns the specified number. But for multiples of three
-// “Fizz” is returned instead of the number and for the multiples
-// of five print “Buzz” is returned. For numbers which are multiples
-// of both three and five “FizzBuzz” is returned.
-func (i Fizzbuzz) Calc() string {
-	if i%15 == 0 {
-		return "FizzBuzz"
-	}
+type BuzzHandler struct {
+	Next Handler
+}
+
+type FizzBuzzHandler struct {
+	Next Handler
+}
+
+type DefaultHandler struct {
+}
+
+func (handler *FizzHandler) Calc(i int) string {
 	if i%3 == 0 {
 		return "Fizz"
 	}
+	return handler.Next.Calc(i)
+}
+
+func (handler *BuzzHandler) Calc(i int) string {
 	if i%5 == 0 {
 		return "Buzz"
 	}
-	return fmt.Sprintf("%v", i)
+	return handler.Next.Calc(i)
+}
 
+func (handler *FizzBuzzHandler) Calc(i int) string {
+	if i%15 == 0 {
+		return "FizzBuzz"
+	}
+	return handler.Next.Calc(i)
+}
+
+func (handler *DefaultHandler) Calc(i int) string {
+	return strconv.Itoa(i)
 }
