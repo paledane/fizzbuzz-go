@@ -1,49 +1,9 @@
 package fizzbuzz
 
-import (
-	"strconv"
-)
+import "strconv"
 
-type Handler interface {
-	Calc(i int) string
-}
-
-type FizzHandler struct {
-	Next Handler
-}
-
-type BuzzHandler struct {
-	Next Handler
-}
-
-type FizzBuzzHandler struct {
-	Next Handler
-}
-
-type DefaultHandler struct {
-}
-
-func (handler *FizzHandler) Calc(i int) string {
-	if i%3 == 0 {
-		return "Fizz"
+func DefaultHandler(next func(int) string) func(int) string {
+	return func(i int) string {
+		return strconv.Itoa(i)
 	}
-	return handler.Next.Calc(i)
-}
-
-func (handler *BuzzHandler) Calc(i int) string {
-	if i%5 == 0 {
-		return "Buzz"
-	}
-	return handler.Next.Calc(i)
-}
-
-func (handler *FizzBuzzHandler) Calc(i int) string {
-	if i%15 == 0 {
-		return "FizzBuzz"
-	}
-	return handler.Next.Calc(i)
-}
-
-func (handler *DefaultHandler) Calc(i int) string {
-	return strconv.Itoa(i)
 }
