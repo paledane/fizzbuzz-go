@@ -47,3 +47,23 @@ func TestCanStopAtFirstHandlerInChain(t *testing.T) {
 		t.Errorf("func(%d) == %q, want %q", in, result, want)
 	}
 }
+
+func TestBuzzHandler(t *testing.T) {
+	sut := BuzzHandler(nil)
+	in := 5
+	want := "Buzz"
+
+	if result := sut(in); result != want {
+		t.Errorf("func(%d) == %q, want %q", in, result, want)
+	}
+}
+
+func TestFizzBuzzHandler(t *testing.T) {
+	sut := FizzBuzzHandler(nil)
+	in := 15
+	want := "FizzBuzz"
+
+	if result := sut(in); result != want {
+		t.Errorf("func(%d) == %q, want %q", in, result, want)
+	}
+}

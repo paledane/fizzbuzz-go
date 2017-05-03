@@ -17,3 +17,23 @@ func FizzHandler(next func(int) string) func(int) string {
 		return handler(i)
 	}
 }
+
+func BuzzHandler(next func(int) string) func(int) string {
+	handler := next
+	return func(i int) string {
+		if i%5 == 0 {
+			return "Buzz"
+		}
+		return handler(i)
+	}
+}
+
+func FizzBuzzHandler(next func(int) string) func(int) string {
+	handler := next
+	return func(i int) string {
+		if i%15 == 0 {
+			return "FizzBuzz"
+		}
+		return handler(i)
+	}
+}
