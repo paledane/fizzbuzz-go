@@ -8,7 +8,10 @@ import (
 
 func main() {
 
-	chain := fizzbuzz.DefaultHandler(nil)
+	chain := fizzbuzz.FizzBuzzHandler(
+		fizzbuzz.FizzHandler(
+			fizzbuzz.BuzzHandler(
+				fizzbuzz.DefaultHandler(nil))))
 
 	for i := 1; i <= 100; i++ {
 		fmt.Printf("%q\n", chain(i))
