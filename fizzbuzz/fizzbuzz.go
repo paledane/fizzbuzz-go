@@ -9,10 +9,11 @@ func DefaultHandler(next func(int) string) func(int) string {
 }
 
 func FizzHandler(next func(int) string) func(int) string {
+	handler := next
 	return func(i int) string {
 		if i%3 == 0 {
 			return "Fizz"
 		}
-		return strconv.Itoa(i)
+		return handler(i)
 	}
 }
